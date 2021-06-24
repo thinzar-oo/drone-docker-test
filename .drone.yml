@@ -3,11 +3,15 @@ type: docker
 name: default
 
 clone:
-  disable: true
+  depth: 3
 
 steps:
-- name: clone
+- name: fetch
   image: alpine/git
   commands:
-  - git clone https://github.com/octocat/hello-world.git .
-  - git checkout test
+  - git fetch --tags
+  
+- name: submodules
+  image: alpine/git
+  commands:
+  - git submodule update --init --recursive
