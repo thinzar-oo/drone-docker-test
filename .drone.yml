@@ -1,17 +1,13 @@
----
 kind: pipeline
 type: docker
 name: default
 
+clone:
+  disable: true
 
 steps:
-- name: lint
-  image: python:3.7-alpine
+- name: clone
+  image: alpine/git
   commands:
-  - python -m pip install -r requirements.txt
-  - flake8
-  
-trigger:
-  event:
-    include:
-    - push
+  - git clone https://github.com/octocat/hello-world.git .
+  - git checkout test
