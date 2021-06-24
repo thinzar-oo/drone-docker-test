@@ -1,11 +1,9 @@
----
 kind: pipeline
 type: docker
-name: default
-
+name: linux-amd64
+platform:
+  arch: amd64
+  os: linux
 steps:
-  - name: lint
-    image: python:3.7-alpine
-    commands:
-      - python -m pip install -r requirements.txt
-      - flake8
+- name: test
+  image: golang:1.14.4
