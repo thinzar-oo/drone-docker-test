@@ -1,9 +1,14 @@
 kind: pipeline
+type: docker
 name: default
 
 steps:
-- name: download  
-  image: plugins/download
-  settings:
-    source: https://github.com/drone/drone-cli/releases/download/v0.8.5/drone_linux_amd64.tar.gz
-    sha256: a16f709bc5402727366ca91ba85bba07c0f084a33ce9ab7fe03b8093c4027314
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
+
+trigger:
+  branch:
+  - master
