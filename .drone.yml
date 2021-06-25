@@ -3,12 +3,11 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: golang
-  commands:
-  - go build
-  - go test
+  - name: ping
+    image: redis
+    commands:
+    - redis-cli -h cache ping
 
-trigger:
-  branch:
-  - master
+services:
+  - name: cache
+    image: redis
