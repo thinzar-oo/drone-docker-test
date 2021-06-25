@@ -4,4 +4,11 @@ name: default
 
 steps:
 - name: build
-  image: index.docker.io/library/golang
+  image: golang
+  commands:
+  - go build
+  - go test
+
+trigger:
+  branch:
+  - master
