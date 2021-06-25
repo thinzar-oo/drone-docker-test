@@ -4,11 +4,4 @@ name: default
 
 steps:
 - name: build
-  image: golang
-  commands:
-  - go build
-  - go test
-
-trigger:
-  branch:
-  - master
+  image: docker.company.com/golang
