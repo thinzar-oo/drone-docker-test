@@ -3,11 +3,11 @@ type: docker
 name: default
 
 steps:
-  - name: ping
-    image: redis
-    commands:
-    - redis-cli -h cache ping
+- name: ping
+  image: redis
+  commands:
+  - redis-cli -h cache ping
 
 services:
-  - name: cache
-    image: redis
+- name: cache
+  image: redis
