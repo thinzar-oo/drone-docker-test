@@ -6,4 +6,4 @@ steps:
   image: plugins/download
   settings:
     source: https://github.com/drone/drone-cli/releases/download/v0.8.5/drone_linux_amd64.tar.gz
-    md5: a0524c59d5c45bf2e924465115836d37
+    sha256: a16f709bc5402727366ca91ba85bba07c0f084a33ce9ab7fe03b8093c4027314
