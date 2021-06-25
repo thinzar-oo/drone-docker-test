@@ -4,4 +4,4 @@ name: default
 
 steps:
 - name: build
-  image: docker.company.com/golang
+  image: index.docker.io/library/golang
