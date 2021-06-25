@@ -4,5 +4,5 @@ name: default
 
 steps:
 - name: build
-  pull: never
-  image: golang:1.12
+  pull: if-not-exists
+  image: golang
