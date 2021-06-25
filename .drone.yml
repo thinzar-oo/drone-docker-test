@@ -4,5 +4,5 @@ name: default
 
 steps:
 - name: build
-  pull: never
-  image: golang:1.12
+  pull: always
+  image: index.docker.io/library/golang:1.7
