@@ -10,7 +10,5 @@ steps:
       - python -m pip install -r requirements.txt
       - flake8
 
-when:
-  event:
-    include:
-    - push
+node:
+  dev-drone: test-value
