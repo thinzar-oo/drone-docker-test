@@ -17,5 +17,5 @@ trigger:
 when:
     branch:
       only:
-        - branch
+        - branch1
   
