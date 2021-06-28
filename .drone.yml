@@ -1,14 +1,22 @@
----
 kind: pipeline
-type: docker
-name: default
+name: testing
 
 steps:
-  - name: lint
-    image: python:3.7-alpine
-    commands:
-      - python -m pip install -r requirements.txt
-      - flake8
+- name: first
+  image: php
+  commands:
+  - echo “Output from first step”;
 
-node:
-  dev-drone: test-value
+- name: second
+  image: php
+  commands:
+  - echo “Output from second step”;
+
+- name: third
+  image: php
+  commands:
+  - echo “Output from third step”;
+
+  depends_on:
+  - first
+  - second
