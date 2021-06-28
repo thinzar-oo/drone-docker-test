@@ -14,4 +14,3 @@ when:
   event:
     include:
     - push
-
