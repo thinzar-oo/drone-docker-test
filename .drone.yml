@@ -1,14 +1,22 @@
 kind: pipeline
-type: docker
-name: default
+name: testing
 
 steps:
-  - name: ping
-    image: redis
-    commands:
-    - sleep 5
-    - redis-cli -h cache ping
+- name: first
+  image: php
+  commands:
+  - echo “Output from first step”;
 
-services:
-  - name: cache
-    image: redis
+- name: second
+  image: php
+  commands:
+  - echo “Output from second step”;
+
+- name: third
+  image: php
+  commands:
+  - echo “Output from third step”;
+
+  depends_on:
+  - first
+  - second
