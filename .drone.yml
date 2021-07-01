@@ -2,22 +2,10 @@ kind: pipeline
 name: default
 
 steps:
-- name: foo
-  image: alpine:3.8
-  volumes:
-  - name: m2
-    path: /root/.m2
-  commands:
-  - touch /root/.m2/foo.txt
-
-- name: bar
-  image: alpine:3.8
-  volumes:
-  - name: m2
-    path: /root/.m2
-  commands:
-  - ls /root/.m2/
-
-volumes:
-- name: m2
-  temp: {}
+- name: build
+  image: alpine
+  environment:
+    USERNAME:
+      from_secret: repo_secret_1
+    PASSWORD:
+      from_secret: repo_secret_pw
