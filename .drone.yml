@@ -9,4 +9,3 @@ steps:
       from_secret: repo_secret_1
     PASSWORD:
       from_secret: repo_secret_pw
-      
