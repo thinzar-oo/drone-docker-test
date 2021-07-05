@@ -9,4 +9,4 @@ steps:
   image: plugins/slack
   settings:
     webhook:
-      from_secret: Drone-slack
+      from_secret: SlackWebhook
