@@ -1,10 +1,13 @@
 kind: pipeline
+type: docker
 name: default
 
+clone:
+  disable: true
+
 steps:
-- name: install
-  image: composer
-
-- name: test
-  image: php:7
-
+- name: clone
+  image: alpine/git
+  commands:
+  - git clone https://github.com/octocat/hello-world.git .
+  - git checkout test
