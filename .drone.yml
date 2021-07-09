@@ -2,9 +2,6 @@ kind: pipeline
 name: default
 
 steps:
-- name: install
-  image: openjdk
-
 - name: test
   image: openjdk
   
