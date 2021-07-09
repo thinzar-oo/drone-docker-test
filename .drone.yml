@@ -1,7 +1,16 @@
-kind: pipeline
-name: default
+image: java:latest
 
-steps:
-- name: test
-  image: openjdk
-  
+stages:
+  - build
+  - execute
+
+build:
+  stage: build
+  script: /usr/src/myapp/openjdk/bin/javac HelloDate.java
+  artifacts:
+    paths:
+     - HelloDate.*
+
+execute:
+  stage: execute
+  script: /usr/src/myapp/openjdk/bin/java HelloDate
