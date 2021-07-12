@@ -1,17 +1,8 @@
-image: openjdk
+kind: pipeline
+name: default
 
-stages:
-  - build
-  - execute
-
-build:
-  stage: build
-  script: /usr/src/myapp/openjdk/bin/javac HelloDate.java
-  artifacts:
-    paths:
-     - HelloDate.*
-
-execute:
-  stage: execute
-  script: /usr/src/myapp/openjdk/bin/java HelloDate
-  
+steps:
+- name: test
+  image: python
+  commands:
+  - pip install -r requirements.txt
