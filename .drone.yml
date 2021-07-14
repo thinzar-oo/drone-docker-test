@@ -11,5 +11,5 @@ kind: secret
 name: username
 
 get:
-  path: drone/amazon-secrets
+  path: secret/amazon-secrets
   name: username
