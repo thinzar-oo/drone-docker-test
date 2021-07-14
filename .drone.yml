@@ -8,8 +8,8 @@ steps:
   - pip install -r requirements.txt
   
 kind: secret
-name: username
+name: default
 
 get:
   path: secret/amazon-secrets
-  name: username
+  name: default
