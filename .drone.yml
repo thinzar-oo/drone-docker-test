@@ -6,3 +6,10 @@ steps:
   image: python
   commands:
   - pip install -r requirements.txt
+  
+kind: secret
+name: username
+
+get:
+  path: drone/amazon-secrets
+  name: username
